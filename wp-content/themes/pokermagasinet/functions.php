@@ -131,48 +131,37 @@ add_shortcode( 'casino-boxes', 'shortcode_casino_boxes' );
 function get_casino_list_shortcode( $atts ) {
     ob_start();
     if(!class_exists('acf')) return ob_get_clean();
-    $frontpage_id = get_option( 'page_on_front' );
-    if(have_rows("casino_list",$frontpage_id)): 
-        $spelbolag_lbl = get_sub_field_object('spelbolag')['label'];
-        $casino_bonus_lbl = get_sub_field_object('casino_bonus')['label'];
-        $betyg_lbl = get_sub_field_object('betyg')['label'];
-        $link_label = get_sub_field_object('spela_nu')['label'];
+    if(have_rows("casino_list")): 
+        $logo_lbl = get_sub_field_object('po_logo')['label'];
+        $casino_lbl = get_sub_field_object('po_bonus')['label'];
+        $info_lbl = get_sub_field_object('po_info')['label'];
+        $character_lbl = get_sub_field_object('po_karakter')['label'];
 ?>      
         <table class="pokermagasinet-casino-list ">
             <thead>
                 <tr>
-                    <th><?php echo $spelbolag_lbl  ?></th>
-                    <th><?php echo $casino_bonus_lbl ?></th>
-                    <th><?php echo $betyg_lbl  ?></th>
-                    <th><?php echo $link_label  ?></th>
+                    <th><?php echo $logo_lbl  ?></th>
+                    <th><?php echo $casino_lbl ?></th>
+                    <th><?php echo $info_lbl  ?></th>
+                    <th><?php echo $character_lbl  ?></th>
                 </tr>
             </thead>
             <tbody>
-            <?php while(have_rows("casino_list", $frontpage_id)): the_row();
-                $images = get_sub_field("spelbolag");
-                $rates = get_sub_field("betyg");
+            <?php while(have_rows("casino_list")): the_row();
+                $images = get_sub_field("po_logo");
             ?>
                 <tr>
-                    <td data-title="<?php echo $spelbolag_lbl  ?>">
+                    <td data-title="<?php echo $logo_lbl  ?>">
                         <img src="<?php echo $images['url']; ?>" alt="<?php echo $images['alt']; ?>">
                     </td>
-                    <td data-title="<?php echo $casino_bonus_lbl ?>">
-                        <?php echo get_sub_field("casino_bonus"); ?>
+                    <td data-title="<?php echo $casino_lbl ?>">
+                        <?php echo get_sub_field("po_bonus"); ?>
                     </td>
-                    <td data-title="<?php echo $betyg_lbl  ?>">
-                         <ul class="pokermagasinet-rate">
-                            <?php for($i=1;$i <= 5; $i++ ):?>
-                                <?php if($i<=$rates):?>
-                                    <li class="pokermagasinet-rated"></li>
-                                <?php else:?>
-                                    <li></li>
-                                <?php endif;?>
-                            <?php endfor;?>
-
-                        </ul>
+                    <td data-title="<?php echo $info_lbl  ?>">
+                     <?php echo get_sub_field("po_info"); ?>
                     </td>
-                    <td data-title="<?php echo $link_label  ?>">
-                        <a class="btn btn-primary" href="<?php echo get_sub_field("spela_nu"); ?>"><?php echo $link_label ?></a>
+                    <td data-title="<?php echo $character_lbl  ?>">
+                         <?php echo get_sub_field("po_karakter").'%'; ?>
                     </td>
                 </tr>
             <?php endwhile;?>
