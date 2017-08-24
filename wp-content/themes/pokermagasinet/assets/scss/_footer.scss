@@ -1,0 +1,9 @@
+#pokermagasinet-footer {
+	padding: 25px 0;
+	color: $footer-text-color;
+	font-size: 15px;
+	background: $footer-bg-color;
+	p:last-child {
+		margin: 0
+	}
+}

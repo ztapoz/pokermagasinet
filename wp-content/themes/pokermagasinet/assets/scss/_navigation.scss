@@ -1,0 +1,204 @@
+// style used  for both mobile and desktop 
+.navbar-nav {
+    float: none!important;
+    text-align: left;
+    padding: 20px 0;
+    // style used for all level
+    li {
+        a {
+            text-transform: uppercase;
+            font-size: $navbar-default-link-size;
+        }
+    }
+    // for first level li
+    > li {
+        float: none;
+        display: block;
+        padding: 10px 20px;
+        border-top: 1px solid #ddd;
+        > a {
+            display: inline;
+            color: $navbar-default-link-color;
+            background: $navbar-default-link-bg;
+            user-select: none;
+            padding: 0;
+            font-weight: 700;
+            &:hover,
+            &:focus,
+            &:active {
+                background: $navbar-default-link-bg;
+                color: $navbar-default-link-hover-color;
+            }
+        }
+        // current menu color
+        &.current-menu-item {
+            > a {
+                color: $navbar-default-link-color-current;
+            }
+        }
+        // style for  parent item (arrow icon)
+        &.menu-item-has-children {
+            position: relative;
+            &:after {
+                content: "";
+                right: 20px;
+                display: block;
+                position: absolute;
+                top: 15px;
+                width: 10px;
+                height: 10px;
+                -webkit-transform: rotate(-45deg);
+                transform: rotate(-45deg);
+                border-left: 1px solid white;
+                border-bottom: 1px solid white;
+            }
+            &:before {
+                background: white none repeat scroll 0 0;
+                content: "";
+                display: block;
+                height: 43px;
+                position: absolute;
+                right: 50px;
+                top: 0;
+                width: 1px;
+            }
+            &.open {
+                padding-bottom: 0;
+                a {
+                    background: none;
+                }
+                &:after {
+                    top: 20px;
+                    -webkit-transform: rotate(-225deg);
+                    transform: rotate(-225deg);
+                }
+                ul li a {
+                    padding: 0;
+                }
+            }
+        }
+        // submenu 
+        ul {
+            margin: 0 -20px;
+            user-select: none;
+            min-width: 250px;
+            padding: 0 0 0;
+            li {
+                a {
+                    display: inline;
+                    padding: 0;
+                    text-transform: none;
+                     white-space: normal;
+                }
+            }
+        }
+    }
+}
+
+// min-wdith :1025 , css for desktop only, write css for desktop only
+@include desktop {
+    .navbar-nav {
+        text-align: center;
+        padding: 0;
+        > li {
+            display: inline-block;
+            padding: 0;
+            border :none;
+            &:last-child .dropdown-menu {
+                left: auto;
+                right: 0;
+            }
+            &:hover {
+                ul {
+                    display: block;
+                }
+            }
+            > a {
+                display: block;
+                padding: 34px 15px;
+            }
+            /* &.current_page_item {
+                position: relative;
+                &:before {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    left: 50%;
+                    bottom: 20px;
+                    height: 1px;
+                    width: calc(100% - 30px);
+                    transform: translateX(-50%);
+                    background: #fc4a1a;
+                }
+            } */
+            &.menu-item-has-children {
+                &:after,
+                &:before {
+                    display: none
+                }
+            }
+            ul {
+                margin: 0;
+                padding: 10px 0!important;
+                li {
+                    & + li {
+                        margin: 0;
+                    }
+                    a {
+                        display: block;
+                        padding: 5px 10px!important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// media query for lanscape ipad only
+@include tablet {
+    .navbar-nav > li {
+        > a {
+            padding-left: 10px;
+            padding-right: 10px;
+            font-size: 14px;
+        }
+        ul {
+            a {
+                font-size: 16px;
+            }
+        }
+    }
+}
+
+// media query max-width 990 for mobile only and ipad portrait 
+@include md_tablet {
+    .navbar-collapse {
+        overflow-x: hidden;
+        margin: 0 -15px;
+        .dropdown-menu {
+            li {
+                padding: 10px 20px;
+                border-top: 1px solid #ddd;
+                a {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+    .navbar-nav .open .dropdown-menu {
+        margin-top: 10px;
+    }
+    .caret {
+        display: none
+    }
+}
+
+// media query max-width 767 for mobily only
+@include xs {
+    .navbar-nav {
+        padding: 0;
+    }
+    .navbar-collapse.in {
+        max-height: calc(100vh - 88px);
+    }
+}

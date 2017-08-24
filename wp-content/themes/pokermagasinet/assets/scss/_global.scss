@@ -1,0 +1,44 @@
+body {
+	font-weight: 400;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: $body-bg-color;
+}
+
+
+h1,h2,h3,h4,h5 {
+	margin: 0 0 20px;
+}
+
+p {
+	margin: 0 0 20px;
+}
+
+input {
+	padding: 5px 10px;
+}
+
+button {
+	border: 1px solid transparent;
+	background: white;
+	height: 35px;
+	text-transform: uppercase;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+
+
+.btn-primary {
+	background: $btn-primary-bg;
+	border-color: $btn-primary-bg;
+}
+
+.shortcode-section{
+	p:empty{
+		display: none
+	}
+} 

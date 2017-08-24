@@ -1,0 +1,534 @@
+.the-body {
+    padding: 20px 0;
+    min-height: 100vh;
+    .page-header {
+        margin-top: 0;
+    }
+    h2 {
+        color: $brand-primary;
+    }
+    ul {
+        list-style: none;
+    }
+    #secondary {
+        .widget-title {
+            margin: 0 0 25px;
+        }
+    }
+}
+
+.pokermagasinet-content-area {
+    img {
+        height: auto !important;
+    }
+}
+
+.entry-title {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.pokermagasinet-page-title {
+    color: $brand-primary;
+}
+
+.heading,
+.sub-heading {
+    text-align: center;
+}
+
+.sub-heading {
+    margin: 0 0 40px;
+}
+
+.page-header {
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+figure {
+    img {
+        margin: 0;
+    }
+    figcaption {
+        padding: 10px 5px;
+        background: $brand-primary;
+        font-size: $font-size-small;
+    }
+}
+
+
+.pokermagasinet-the-content {
+    img {
+        margin-bottom: 20px;
+    }
+    p {
+        img {
+            margin-bottom: 0;
+        }
+    }
+    ul {
+       // list-style: none;
+    }
+
+    p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.post {
+    margin: 0 0 15px;
+    .entry-date {
+        color: #999;
+        text-transform: uppercase;
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+        clear: both;
+    }
+    .entry-title {
+        margin: 0 0 10px;
+        font-size: 30px;
+        a {
+            color: $text-color;
+        }
+    }
+    .entry-meta {
+        margin: 0 0 10px;
+    }
+    .entry-image {
+        margin: 0 0 15px;
+    }
+}
+
+//  styel sheet for post blog post...
+.posted-on {
+    margin-right: 5px;
+    .published+.updated {
+        display: none;
+    }
+    &+.cat-links:before {
+        content: "|";
+        display: inline-block;
+        font-size: 14px;
+        margin: 0 5px;
+        vertical-align: top;
+    }
+}
+
+.cat-links {
+    margin-right: 5px;
+    &+.tags-links {
+        &:before {
+            content: "|";
+            display: inline-block;
+            font-size: 14px;
+            margin: 0 5px;
+            vertical-align: top;
+        }
+    }
+}
+
+.tagcloud {
+    a {
+        font-size: 16px !important;
+        &+a:before {
+            content: ",";
+        }
+    }
+}
+
+.post,
+.type-page {
+    &+.post,
+    &+.type-page {
+        margin-top: 20px;
+        padding-top: 30px;
+        border-top: 1px solid #ddd;
+    }
+    .byline {
+        display: none;
+    }
+    .entry-date {
+        color: #999;
+        text-transform: uppercase;
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+        }
+    }
+    &:after {
+        content: " "; // 1
+        display: table; // 2
+        clear: both;
+    }
+    .entry-title {
+        text-align: left;
+        margin: 0 0 10px;
+        a {
+            color: $text-color;
+        }
+    }
+    .entry-meta {
+        margin: 0 0 10px;
+    }
+    .entry-image,
+    .post-thumbnail {
+        display: block;
+        img {
+            height: auto;
+        }
+        margin-bottom: 15px;
+    }
+}
+
+.nav-links {
+    .page-numbers {
+        margin: 0 10px 0 0;
+    }
+}
+
+.meta-nav {
+    margin-right: 10px;
+}
+
+.entry-header {
+    &+.entry-content {
+        margin: 5px 0 0 0;
+    }
+}
+
+
+//table shortcode
+.table-section:nth-child(even) {
+    .panel-table {
+        background: white;
+    }
+}
+
+.table-section+.pokermagasinet-the-content {
+    border-top: 9px solid $brand-primary;
+}
+
+.pokermagasinet-rate {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    li {
+        display: inline-block;
+    }
+}
+
+.casino-box {
+    text-align: center;
+    margin: 30px 0;
+    .casino-logo {
+        margin: 0 0 15px;
+    }
+}
+
+.pokermagasinet-casino-list {
+    width: 100%;
+    margin: 30px 0;
+    td:first-child,
+    td:last-child {
+        width: 18%;
+    }
+    tr {
+        th {
+            background: #ddd;
+        }
+        td,
+        th {
+            padding: 12px 12px;
+            vertical-align: middle;
+            text-align: center;
+        }
+        img,
+        p,
+        ul {
+            margin: 0;
+        }
+    }
+
+    .pokermagasinet-rate {
+        li {
+            font-size: 0;
+
+            background: url(../images/vote.png) no-repeat -25px 0;
+            width: 24px;
+            height: 24px;
+            vertical-align: middle;
+            &.pokermagasinet-rated {
+                background-position: 0 0;
+            }
+        }
+    }
+}
+
+// end table shortcode
+.search .page-header {
+    margin-top: 0;
+}
+
+.searchform {
+    input[type="submit"] {
+        background: $brand-primary;
+        color: white;
+        border: 1px solid $brand-primary;
+    }
+}
+
+.widget {
+    margin: 0 0 30px;
+    ul {
+        list-style: none;
+        padding: 0;
+
+    }
+}
+
+h2.widget-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin-bottom: 30px!important;
+}
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    overflow-wrap: normal !important;
+    position: absolute!important;
+    width: 1px;
+}
+
+.searchform {
+    position: relative;
+    .search-button {
+        border: none;
+        background: none;
+        outline: none;
+        position: absolute;
+        top: 2px;
+        right: 8px;
+    }
+    input[type="text"] {
+        width: 100%;
+        border: 1px solid #ddd;
+        padding: 5px 40px 5px 10px;
+    }
+}
+
+
+
+/**
+ * wp - 
+ */
+
+.screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    height: 1px;
+    overflow: hidden;
+    overflow-wrap: normal !important;
+    position: absolute!important;
+    width: 1px;
+}
+
+
+
+/**
+ *  wp - Alignments
+ */
+
+.alignleft {
+    display: inline;
+    float: left;
+}
+
+.alignright {
+    display: inline;
+    float: right;
+}
+
+.aligncenter {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+blockquote.alignleft,
+.wp-caption.alignleft,
+img.alignleft {
+    margin: 0.4em 1.6em 1.6em 0;
+}
+
+blockquote.alignright,
+.wp-caption.alignright,
+img.alignright {
+    margin: 0.4em 0 1.6em 1.6em;
+}
+
+blockquote.aligncenter,
+.wp-caption.aligncenter,
+img.aligncenter {
+    clear: both;
+    margin-top: 0.4em;
+    margin-bottom: 1.6em;
+}
+
+.wp-caption.alignleft,
+.wp-caption.alignright,
+.wp-caption.aligncenter {
+    margin-bottom: 1.2em;
+}
+
+.entry-content .wp-post-image {
+    margin: 0 0 25px;
+}
+
+.post-thumbnail {
+    margin: 25px 0;
+}
+.pokermagasinet-sub-pages {
+    margin: 20px 0;
+}
+ .pokermagasinet-page-item {
+        overflow: hidden;
+        margin-bottom: 25px;
+        .page-thumbnail {
+            float: left;
+            margin-right: 15px;
+            max-width: 360px;
+            &+div {
+                overflow: hidden;
+            }
+        }
+    }
+
+
+// min-wdith :1025 , css for desktop only, write css for desktop only
+@include desktop {
+    .flex {
+        &:before,
+        &:after {
+            display: none;
+        }
+        display: flex;
+        flex-wrap: wrap;
+        >.the-content {
+            order: 1;
+        }
+        >.sidebar {
+            order: 2;
+        }
+
+        >.sjansespill-rate-sidebar {
+            order: 3;
+        }
+    }
+    .nav-links {
+        @include clearfix();
+    }
+    .nav-previous {
+        float: left;
+        width: 45%;
+    }
+    .nav-next {
+        width: 45%;
+        float: right;
+        text-align: right;
+    }
+}
+
+.pokermagasinet-base-container {
+    padding-top: 25px;
+    padding-bottom: 25px;
+    min-height: 70vh;
+    background: white;
+}
+
+.shortcode-section {
+    margin-bottom: 20px;
+}
+
+// media query for lanscape ipad only
+// media query max-width 990 for mobile only and ipad portrait 
+@include md_tablet {
+
+    .pokermagasinet-sidebar {
+        margin-top: 30px;
+    }
+}
+
+// media query max-width 767 for mobily only
+@include xs {
+    img {
+        height: auto
+    }
+ .pokermagasinet-page-item .page-thumbnail {
+            float: none;
+            margin-right: 0;
+            max-width: none;
+            &+div {
+                margin-top: 15px;
+                overflow: visible;
+            }
+        }
+
+    .pokermagasinet-casino-list {
+        tr {
+            border-bottom: 1px solid #ddd;
+            th {
+                display: none
+            }
+            td {
+
+                .pokermagasinet-rate {
+                    text-align: left;
+                }
+                border: none;
+                display: block;
+                margin: 10px 0;
+                width: 100%!important;
+                text-align: left!important;
+                position: relative;
+                padding-left: 50%!important;
+                &:before {
+                    display: block;
+                    top: 50%;
+                    @include translateY(-50%);
+                    width: 45%;
+                    left: 10px;
+                    font-weight: 700;
+                    position: absolute;
+                    content: attr(data-title);
+                }
+            }
+        }
+    }
+    .pokermagasinet-the-content img {
+        height: auto!important;
+    }
+    .caret {
+        display: none;
+    }
+    .page-template-page-contact {
+        .the-body {
+            border: none;
+        }
+    }
+    .hero h1 {
+        font-size: 15px;
+    }
+    .alignleft,
+    .alignright {
+        display: block;
+        float: none;
+    }
+}

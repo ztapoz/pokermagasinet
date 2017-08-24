@@ -1,0 +1,53 @@
+.page-template-page-contact {
+    .the-body {
+        max-width: 754px;
+        margin: 0 auto;
+    }
+}
+
+.pokermagasinet-contact-form {
+    margin: 0 auto;
+    .mbh-notification-box:before {
+        top: 50%;
+        @include translateY(-50%);
+    }
+    br {
+        display: none;
+    }
+    input,
+    textarea {
+        font-weight: 400;
+        display: block;
+        outline: none;
+        height: 40px;
+        margin: 0 0 25px;
+        &.error {
+            border-color: $input-error-color;
+        }
+    }
+    textarea {
+        resize: none;
+        height: 196px;
+    }
+    button {
+        font-weight: 600;
+        display: block;
+        border-radius: 0;
+        margin: auto;
+        outline: none;
+        color: white;
+        width: 164px;
+        background: $brand-primary;
+        border-color: $brand-primary;
+        &:hover {
+            background: $secondary;
+            border-color: $secondary;
+        }
+    }
+    label.error {
+        color: $input-error-color;
+        margin: -15px 0 15px;
+        display: block;
+        font-weight: 400;
+    }
+}

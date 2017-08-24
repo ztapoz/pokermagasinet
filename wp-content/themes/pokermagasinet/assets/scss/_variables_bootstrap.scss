@@ -1,0 +1,138 @@
+
+
+$brand-primary:         #19ba98 !default;
+$secondary:         #2d2e3c !default;
+$text-color:            #2d2e3c !default;
+$link-color:            $brand-primary !default;
+$link-hover-color:      darken($link-color, 15%) !default;
+
+$header-bg-color : $brand-primary;
+
+$footer-bg-color : $brand-primary;
+
+$footer-text-color : white;
+
+
+//** Background color for `<body>`.
+$body-bg-color:               #fff !default;
+
+
+
+//** Link hover decoration.
+$link-hover-decoration: none !default;
+
+
+//== Typography
+//
+//## Font, line-height, and color for body text, headings, and more.
+
+$font-family-sans-serif:  'Lato', Helvetica, Arial, sans-serif !default;
+$font-family-base:        $font-family-sans-serif !default;
+
+$font-size-base:          16px !default;
+$font-size-large:         18px !default; // ~18px
+$font-size-small:         14px !default; // ~12px
+
+$font-size-h1:            30px !default; // ~36px
+$font-size-h2:            27px !default; // ~30px
+$font-size-h3:            24px !default; // ~24px
+$font-size-h4:            20px !default; // ~18px
+$font-size-h5:            18px !default;
+$font-size-h6:            16px !default; // ~12px
+
+//** Unit-less `line-height` for use in components like buttons.
+$line-height-base:        1.428571429 !default; // 20/14
+//** Computed "line-height" (`font-size` * `line-height`) for use with `margin`, `padding`, etc.
+$line-height-computed:    floor(($font-size-base * $line-height-base)) !default; // ~20px
+
+//** By default, this inherits from the `<body>`.
+$headings-font-family:    $font-family-sans-serif !default;
+$headings-font-weight:    700 !default;
+$headings-line-height:    1.1 !default;
+$headings-color:          inherit !default;
+
+
+
+$border-radius-base:        4px !default;
+
+//** Global color for active items (e.g., navs or dropdowns).
+$component-active-color:    #fff !default;
+//** Global background color for active items (e.g., navs or dropdowns).
+$component-active-bg:       $brand-primary !default;
+
+
+
+
+
+//** `<input>` background color
+$input-bg:                       #fff !default;
+
+//** Text color for `<input>`s
+$input-color:                    $text-color !default;
+//** `<input>` border color
+$input-border:                    $brand-primary !default;
+
+$input-border-radius:            0 !default;
+
+//** Border color for inputs on focus
+$input-border-focus:             #66afe9 !default;
+
+//** Placeholder text color
+$input-color-placeholder:        $text-color !default;
+
+$input-error-color: #d9534f;
+
+
+
+
+//== Navbar
+//
+//##
+
+// MENU
+$navbar-height:                    50px !default;
+$navbar-margin-bottom:            0 !default;
+$navbar-border-radius:             0 !default;
+$navbar-padding-vertical:          0 !default;
+
+// Navbar links
+$navbar-default-link-size: $font-size-small;
+$navbar-default-link-color:                white !default;
+$navbar-default-link-hover-color:          $secondary !default;
+$navbar-default-link-color-current:                $secondary !default;
+$navbar-default-link-bg:             transparent !default;
+
+
+//==  SUBMENU
+//
+
+//** Background for the dropdown menu.
+$dropdown-bg:                    $brand-primary !default;
+//** Dropdown menu `border-color`.
+$dropdown-border:                rgba(0,0,0,.15) !default;
+
+//** Dropdown link text color.
+$dropdown-link-color:            white !default;
+//** Hover color for dropdown links.
+$dropdown-link-hover-color:      $navbar-default-link-hover-color;
+//** Hover background for dropdown links.
+$dropdown-link-hover-bg:         #f5f5f5 !default;
+
+$dropdown-link-active-color:     $navbar-default-link-hover-color !default;
+//** Active dropdown menu item background color.
+$dropdown-link-active-bg:        transparent!default;
+
+
+
+
+
+// Breakpoint (just change if need)
+
+$screen-sm:  991px !default;
+$screen-md: 991px !default;
+$lg-width: 1200px;
+$md-width: 1025px;
+$sm-width: 768px;
+$xxs-width: 481px;
+
+
