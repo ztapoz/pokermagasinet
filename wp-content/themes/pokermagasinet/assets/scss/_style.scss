@@ -30,6 +30,11 @@
 
 .pokermagasinet-page-title {
     color: $brand-primary;
+    h1 {
+        text-transform: uppercase;
+        font-size:24px;
+        font-weight:700;
+    }
 }
 
 .heading,
@@ -59,6 +64,16 @@ figure {
 
 
 .pokermagasinet-the-content {
+    h2 {
+        text-transform: uppercase;
+        color:$brand-primary;
+    }
+    h4 {
+        font-size:$font-size-large;
+        color:$brand-primary;
+        margin-bottom: 10px;
+        margin-top:30px;
+    }
     img {
         margin-bottom: 20px;
     }
@@ -232,41 +247,89 @@ figure {
     }
 }
 
-.pokermagasinet-casino-list {
+.pokermagasinet-casino-list,
+.pokermagasinet-top-list  {
     width: 100%;
-    margin: 30px 0;
-    td:first-child,
+    margin: 20px 0;
+    td:first-child
+    {
+        width: 20%;
+    }
     td:last-child {
-        width: 18%;
+        width: 10%;
     }
     tr {
         th {
-            background: #ddd;
+            background: #424450;
+            color: #fff;
+            font-weight: normal;
+            text-transform: uppercase;
         }
         td,
         th {
-            padding: 12px 12px;
+            padding: 10px 12px;
             vertical-align: middle;
             text-align: center;
+            text-transform: uppercase;
+        }
+        td {
+            color: $brand-primary;
+            border-bottom:2px solid $secondary;
+            &:nth-child(3) {
+                font-weight: 700;
+                color:$secondary;
+            }
         }
         img,
         p,
         ul {
             margin: 0;
         }
-    }
-
-    .pokermagasinet-rate {
-        li {
-            font-size: 0;
-
-            background: url(../images/vote.png) no-repeat -25px 0;
-            width: 24px;
-            height: 24px;
-            vertical-align: middle;
-            &.pokermagasinet-rated {
-                background-position: 0 0;
+        &:nth-child(2n) {
+            td {
+                background:#eaeaea;
             }
+        }
+        &:last-child {
+            td {
+                border-bottom-width:5px;
+            }
+        }
+    }
+}
+
+.pokermagasinet-top-list {
+    td {
+        &:first-child {
+            width: 7%;
+        }
+        &:last-child {
+            width: 10%;
+        }
+        &:nth-child(3) {
+            width: 5%;
+        }
+        &:nth-child(2),
+        &:nth-child(5) {
+        font-weight: bold;
+        a {
+            color: $secondary;
+            &:hover {
+                color: $brand-primary;
+            }
+        }
+        }
+    }
+    tr {
+        th {
+            background:$brand-primary;
+        }
+        td {
+            border-bottom:2px solid $brand-primary;
+            color:$secondary;
+             &:nth-child(5) {
+                color:$brand-primary;
+             }
         }
     }
 }
@@ -411,7 +474,57 @@ img.aligncenter {
         }
     }
 
-
+.medal-gold {
+    background:url('../images/gold-medal.png') no-repeat top left;
+    width: 26px;
+    height: 44px;
+    display: inline-block;
+}
+.medal-silver {
+     background:url('../images/silver-medal.png') no-repeat top left;
+    width: 26px;
+    height: 43px;
+    display: inline-block;
+}
+.medal-copper {
+     background:url('../images/copper-medal.png') no-repeat top left;
+    width: 26px;
+    height: 46px;
+    display: inline-block;
+}
+.pokermagasinet-rate-sidebar {
+    h2.widget-title {
+            font-size: $font-size-base;
+            color:$brand-primary;
+            text-transform: uppercase;
+            margin-bottom: 10px!important;
+            border-bottom: 4px solid $secondary;
+            padding-bottom: 5px;
+    }
+    .menu {
+        li {
+            margin-bottom: 5px;
+            a {
+                color:$secondary;
+                &:before {
+                    content:'>';
+                    padding-right:5px;
+                }
+                &:hover {
+                    color: $brand-primary;
+                }
+            }
+        }
+        .current-menu-item {
+            a {
+                color: $brand-primary;
+            }
+        }
+    }
+}
+.page-thubnail {
+    margin-bottom: 20px;
+}
 // min-wdith :1025 , css for desktop only, write css for desktop only
 @include desktop {
     .flex {
@@ -447,7 +560,7 @@ img.aligncenter {
 }
 
 .pokermagasinet-base-container {
-    padding-top: 25px;
+    padding-top: 40px;
     padding-bottom: 25px;
     min-height: 70vh;
     background: white;
@@ -461,7 +574,7 @@ img.aligncenter {
 // media query max-width 990 for mobile only and ipad portrait 
 @include md_tablet {
 
-    .pokermagasinet-sidebar {
+    .pokermagasinet-rate-sidebar {
         margin-top: 30px;
     }
 }
@@ -481,17 +594,14 @@ img.aligncenter {
             }
         }
 
-    .pokermagasinet-casino-list {
+    .pokermagasinet-casino-list,.pokermagasinet-top-list {
+        border-bottom:2px solid $secondary;
         tr {
-            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
             th {
                 display: none
             }
             td {
-
-                .pokermagasinet-rate {
-                    text-align: left;
-                }
                 border: none;
                 display: block;
                 margin: 10px 0;
@@ -508,7 +618,13 @@ img.aligncenter {
                     font-weight: 700;
                     position: absolute;
                     content: attr(data-title);
+                    color:$secondary;
                 }
+            }
+           &:nth-child(2n) {
+                   td {
+                    background: none;
+                   }
             }
         }
     }

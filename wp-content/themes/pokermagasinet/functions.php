@@ -227,3 +227,82 @@ function parse_request( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'parse_request' );
+
+function get_top_list_shortcode( $att ) {
+    ob_start();
+    if(!class_exists('acf')) return ob_get_clean();
+    if(have_rows("top_list")): 
+        $site_lbl = get_sub_field_object('name_site')['label'];
+        $program_lbl = get_sub_field_object('program')['label'];
+        $info_lbl = get_sub_field_object('info')['label'];
+        $rate_lbl = get_sub_field_object('rate')['label'];
+?>      
+        <table class="pokermagasinet-top-list ">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th><?php echo $site_lbl  ?></th>
+                    <th></th>
+                    <th><?php echo $program_lbl ?></th>
+                    <th><?php echo $info_lbl  ?></th>
+                    <th><?php echo $rate_lbl  ?></th>
+                </tr>
+            </thead>
+            <tbody>
+            <?php while(have_rows("top_list")): the_row();
+                $images = get_sub_field("flag");
+            ?>
+                <tr>
+                    <td>
+                        <?php if($images): ?>
+                        <img src="<?php echo $images['url']; ?>" alt="<?php echo $images['alt']; ?>">
+                        <?php endif;?>
+                    </td>
+                    <td data-title="<?php echo $site_lbl ?>">
+                        <a href="<?php echo get_sub_field('url');?>">
+                        <?php echo get_sub_field("name_site"); ?>
+                        </a>
+                    </td>
+                    <td >
+                         <?php  $medal = get_sub_field("medal");
+                            switch ($medal) {
+                                    case 1:
+                                        echo '<i class="medal-gold"></i>';
+                                        break;
+                                    case 2:
+                                         echo '<i class="medal-silver"></i>';
+                                        break;
+                                    case 3:
+                                        echo '<i class="medal-copper"></i>';
+                                        break;
+                                }
+                           ?>
+
+                    </td>
+                    <td data-title="<?php echo $program_lbl  ?>">
+                     <?php echo get_sub_field("program"); ?>
+                    </td>
+                    <td data-title="<?php echo $info_lbl  ?>">
+                     <?php echo get_sub_field("info"); ?>
+                    </td>
+                    <td data-title="<?php echo $rate_lbl  ?>">
+                         <?php echo get_sub_field("rate").'%'; ?>
+                    </td>
+                </tr>
+            <?php endwhile;?>
+            </tbody>
+        </table>
+    <?php endif;    
+    return ob_get_clean();
+}
+add_shortcode( 'top-list', 'get_top_list_shortcode' );
+
+function get_contact_link(){
+  $pages = get_pages(array(
+      'post_type'  => 'page',
+      'meta_key'   => '_wp_page_template',
+      'meta_value' => 'page-contact.php'
+  ));
+  if(!empty($pages) && $pages[0]->ID) return get_page_link($pages[0]->ID);
+  return '#';
+}

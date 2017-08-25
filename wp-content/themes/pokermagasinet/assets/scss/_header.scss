@@ -45,13 +45,17 @@
 		.navbar-header  {
 			float: none;
 		}
+		.navbar-brand {
+			float:none;
+			margin:50px 0;
+		}
 	}
 }
 @include md_tablet {
 	#pokermagasinet-header {
 		.navbar-brand {
 			padding: 10px 0;
-			max-width: 100px;
+			max-width: 200px;
 			> img {
 				display: block;
 			}

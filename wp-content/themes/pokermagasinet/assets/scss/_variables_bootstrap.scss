@@ -8,7 +8,7 @@ $link-hover-color:      darken($link-color, 15%) !default;
 
 $header-bg-color : $brand-primary;
 
-$footer-bg-color : $brand-primary;
+$footer-bg-color : $secondary;
 
 $footer-text-color : white;
 
@@ -34,8 +34,8 @@ $font-size-large:         18px !default; // ~18px
 $font-size-small:         14px !default; // ~12px
 
 $font-size-h1:            30px !default; // ~36px
-$font-size-h2:            27px !default; // ~30px
-$font-size-h3:            24px !default; // ~24px
+$font-size-h2:            24px !default; // ~30px
+$font-size-h3:            22px !default; // ~24px
 $font-size-h4:            20px !default; // ~18px
 $font-size-h5:            18px !default;
 $font-size-h6:            16px !default; // ~12px
@@ -65,12 +65,12 @@ $component-active-bg:       $brand-primary !default;
 
 
 //** `<input>` background color
-$input-bg:                       #fff !default;
+$input-bg:                       $secondary !default;
 
 //** Text color for `<input>`s
-$input-color:                    $text-color !default;
+$input-color:                   $brand-primary !default;
 //** `<input>` border color
-$input-border:                    $brand-primary !default;
+$input-border:                    $secondary !default;
 
 $input-border-radius:            0 !default;
 
@@ -78,7 +78,7 @@ $input-border-radius:            0 !default;
 $input-border-focus:             #66afe9 !default;
 
 //** Placeholder text color
-$input-color-placeholder:        $text-color !default;
+$input-color-placeholder:        $brand-primary !default;
 
 $input-error-color: #d9534f;
 
@@ -96,11 +96,11 @@ $navbar-border-radius:             0 !default;
 $navbar-padding-vertical:          0 !default;
 
 // Navbar links
-$navbar-default-link-size: $font-size-small;
-$navbar-default-link-color:                white !default;
-$navbar-default-link-hover-color:          $secondary !default;
-$navbar-default-link-color-current:                $secondary !default;
-$navbar-default-link-bg:             transparent !default;
+$navbar-default-link-size: $font-size-base;
+$navbar-default-link-color:                $secondary !default;
+$navbar-default-link-hover-color:          $brand-primary !default;
+$navbar-default-link-color-current:                $brand-primary !default;
+$navbar-default-link-bg:             #fff !default;
 
 
 //==  SUBMENU
@@ -118,7 +118,7 @@ $dropdown-link-hover-color:      $navbar-default-link-hover-color;
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:         #f5f5f5 !default;
 
-$dropdown-link-active-color:     $navbar-default-link-hover-color !default;
+$dropdown-link-active-color:     #fff !default;
 //** Active dropdown menu item background color.
 $dropdown-link-active-bg:        transparent!default;
 

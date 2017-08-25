@@ -15,14 +15,14 @@
         float: none;
         display: block;
         padding: 10px 20px;
-        border-top: 1px solid #ddd;
+        border-top: 1px solid #fff;
         > a {
             display: inline;
             color: $navbar-default-link-color;
             background: $navbar-default-link-bg;
             user-select: none;
             padding: 0;
-            font-weight: 700;
+            font-weight: 400;
             &:hover,
             &:focus,
             &:active {
@@ -100,6 +100,7 @@
     .navbar-nav {
         text-align: center;
         padding: 0;
+        margin-bottom:50px; 
         > li {
             display: inline-block;
             padding: 0;
@@ -115,7 +116,12 @@
             }
             > a {
                 display: block;
-                padding: 34px 15px;
+                padding: 10px 0px;
+                width: 165px;
+                margin-right:26px;
+                background:#fff;
+                box-shadow:0 3px 7px rgba(0,0,0,.1);
+
             }
             /* &.current_page_item {
                 position: relative;
@@ -137,6 +143,21 @@
                     display: none
                 }
             }
+            &:nth-child(2n) {
+                > a {
+                    background:$secondary;
+                    color:#fff;
+                    &:hover {
+                        color:$brand-primary;
+                    }
+                }
+            }
+            &:last-child {
+                > a {
+                    margin-right:0;
+                }
+            }
+           
             ul {
                 margin: 0;
                 padding: 10px 0!important;
@@ -151,20 +172,27 @@
                 }
             }
         }
+         .current-menu-item {
+                > a {
+                    color:$brand-primary!important;
+                }
+            }
     }
 }
 
 // media query for lanscape ipad only
 @include tablet {
-    .navbar-nav > li {
-        > a {
-            padding-left: 10px;
-            padding-right: 10px;
-            font-size: 14px;
-        }
-        ul {
-            a {
+    .navbar-nav {
+        > li {
+            > a {
+                padding-left: 10px;
+                padding-right: 10px;
                 font-size: 16px;
+            }
+            ul {
+                a {
+                    font-size: 14px;
+                }
             }
         }
     }
@@ -172,13 +200,21 @@
 
 // media query max-width 990 for mobile only and ipad portrait 
 @include md_tablet {
+    .navbar-nav {
+        padding:1px 0;
+        >li {
+            >a {
+                background:none;
+            }
+        }
+    }
     .navbar-collapse {
         overflow-x: hidden;
         margin: 0 -15px;
         .dropdown-menu {
             li {
                 padding: 10px 20px;
-                border-top: 1px solid #ddd;
+                border-top: 1px solid #fff;
                 a {
                     text-transform: uppercase;
                 }
@@ -197,6 +233,7 @@
 @include xs {
     .navbar-nav {
         padding: 0;
+
     }
     .navbar-collapse.in {
         max-height: calc(100vh - 88px);
