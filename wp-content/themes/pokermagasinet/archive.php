@@ -9,7 +9,7 @@ get_header(); ?>
 	<div id="pokermagasinet-primary" class="pokermagasinet-content-area">
 		<main id="pokermagasinet-main" class="pokermagasinet-site-main" >
 			<div class="row">
-				<div class="col-xs-12 <?php if(has_sidebar_widget()): ?>col-sm-7 col-md-8<?php endif;?>">
+				<div class="col-xs-12 <?php if(has_sidebar_widget()): ?>col-sm-10 col-md-10<?php endif;?>">
 					<?php if ( have_posts() ) : ?>
 
 						<header class="page-header">
